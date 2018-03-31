@@ -7,11 +7,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class InicioVC: UIViewController {
 
+    @IBOutlet weak var btnNavDrawer: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        /*btnNavDrawer.target = self.revealViewController()
+        btnNavDrawer.action = #selector(SWRevealViewController.revealToggle(_:))*/
     }
 
     override func didReceiveMemoryWarning() {
@@ -19,6 +23,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func btnNavDrawer(_ sender: Any) {
+        self.revealViewController().revealToggle(animated: true)
+    }
+    
 }
 
