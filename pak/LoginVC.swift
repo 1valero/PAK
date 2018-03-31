@@ -11,6 +11,7 @@ class LoginVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(LoginVC.description())
 
         // Do any additional setup after loading the view.
     }
