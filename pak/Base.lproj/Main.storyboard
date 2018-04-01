@@ -85,6 +85,9 @@
                                         <state key="normal" title="Cerrar sesion">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="btnCerrarSesion:" destination="Scb-eG-BHQ" eventType="touchUpInside" id="ad2-W9-tNt"/>
+                                        </connections>
                                     </button>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DGZ-ga-2qN">
                                         <rect key="frame" x="0.0" y="290" width="315" height="323"/>
@@ -274,6 +277,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XB3-fB-I0S"/>
                     </view>
+                    <connections>
+                        <outlet property="tbvMenu" destination="DGZ-ga-2qN" id="0n3-12-e6j"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WeV-ny-qHN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

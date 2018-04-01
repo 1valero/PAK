@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FacebookCore
+import FacebookLogin
 
 class LoginVC: UIViewController {
 
@@ -25,14 +27,35 @@ class LoginVC: UIViewController {
         self.revealViewController().revealToggle(animated: true)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func btnFacebook(_ sender: Any) {
+        let loginManager = LoginManager()
+        
+        loginManager.logIn(readPermissions: [.publicProfile], viewController : self) { loginResult in
+            switch loginResult {
+            case .failed(let error):
+                print("Facebook: Error")
+                print(error)
+            case .cancelled:
+                print("Facebook: User cancelled login")
+            case .success(let grantedPermissions, let declinedPermissions, let accessToken):
+                print("Facebook: Logged in")
+                self.requestGraph()
+            }
+        }
     }
-    */
+    func requestGraph(){
+        let connection = GraphRequestConnection()
+        connection.add(GraphRequest(graphPath: "/me")) { httpResponse, result in
+            switch result {
+            case .success(let response):
+                print("Graph Request Succeeded: \(response)")
+                Preferences.init().setSession(value: true)
+                self.revealViewController().revealToggle(animated: true)
+            case .failed(let error):
+                print("Graph Request Failed: \(error)")
+            }
+        }
+        connection.start()
+    }
 
 }

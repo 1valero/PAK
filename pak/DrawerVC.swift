@@ -11,14 +11,10 @@ class DrawerVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var menuArray = [String]()
     
+    @IBOutlet weak var tbvMenu: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //if session true
-        //menuArray = ["m_01", "m_02", "m_03", "m_04", "m_05", "m_06"]
-        //else
-        menuArray = ["m_01", "m_02", "m_06"]
-        
-        //self.revealViewController().rearViewRevealWidth = self.view.frame.width - 44
         self.revealViewController().rearViewRevealWidth = UIScreen.main.bounds.width - 44
         
 
@@ -43,6 +39,26 @@ class DrawerVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: menuArray[indexPath.row], for: indexPath) as UITableViewCell
         return cell
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("didAppear")
+        setMenuData()
+        
+    }
+    @IBAction func btnCerrarSesion(_ sender: Any) {
+        Preferences.init().setSession(value: false)
+        setMenuData()
+    }
+    
+    func setMenuData(){
+        
+        if Preferences.init().isSession(){
+            menuArray = ["m_01", "m_02", "m_03", "m_04", "m_05", "m_06"]
+        }else{
+            menuArray = ["m_01", "m_02", "m_06"]
+        }
+        tbvMenu.reloadData()
+    }
+    
 }
 
