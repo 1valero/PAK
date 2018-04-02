@@ -8,12 +8,17 @@
 import UIKit
 import FacebookCore
 import FacebookLogin
+import GoogleSignIn
 
-class LoginVC: UIViewController {
+class LoginVC: UIViewController, GIDSignInUIDelegate {
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         print(LoginVC.description())
+        
+        GIDSignIn.sharedInstance().uiDelegate = self
+        
 
         // Do any additional setup after loading the view.
     }
@@ -57,5 +62,8 @@ class LoginVC: UIViewController {
         }
         connection.start()
     }
-
+    @IBAction func btnGoogle(_ sender: Any) {
+        GIDSignIn.sharedInstance().signIn()
+    }
+    
 }

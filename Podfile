@@ -9,6 +9,7 @@ target 'pak' do
   pod 'FacebookCore'
   pod 'FacebookLogin'
   pod 'FacebookShare'
+  pod 'GoogleSignIn'
 
   target 'pakTests' do
     inherit! :search_paths
