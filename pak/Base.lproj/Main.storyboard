@@ -350,6 +350,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WnB-8Z-ZDY">
+                                <rect key="frame" x="125" y="399" width="124" height="30"/>
+                                <state key="normal" title="Demo VIsual AMD"/>
+                                <connections>
+                                    <segue destination="n4S-EW-Fxt" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="uvF-ZU-lNa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -358,6 +365,8 @@
                             <constraint firstItem="7r2-vh-wf3" firstAttribute="top" secondItem="eJS-Ey-UGb" secondAttribute="top" id="HYA-fC-2I9"/>
                             <constraint firstItem="oSY-nh-NG9" firstAttribute="top" secondItem="eJS-Ey-UGb" secondAttribute="top" id="J9r-6B-S6a"/>
                             <constraint firstItem="7r2-vh-wf3" firstAttribute="trailing" secondItem="eJS-Ey-UGb" secondAttribute="trailing" id="KSq-Oh-xBP"/>
+                            <constraint firstItem="WnB-8Z-ZDY" firstAttribute="top" secondItem="JbR-K5-Re4" secondAttribute="bottom" constant="24.5" id="KdP-yW-W8F"/>
+                            <constraint firstItem="WnB-8Z-ZDY" firstAttribute="centerX" secondItem="eJS-Ey-UGb" secondAttribute="centerX" id="XY0-6W-YcX"/>
                             <constraint firstItem="7r2-vh-wf3" firstAttribute="leading" secondItem="hYx-wT-Klv" secondAttribute="trailing" id="eqB-eX-lHg"/>
                             <constraint firstItem="hYx-wT-Klv" firstAttribute="leading" secondItem="oSY-nh-NG9" secondAttribute="trailing" id="g2N-FB-Ian"/>
                             <constraint firstAttribute="trailing" secondItem="JbR-K5-Re4" secondAttribute="trailing" constant="16" id="lxq-Dy-a6i"/>
@@ -374,6 +383,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3CP-Yx-uZc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="544.79999999999995" y="947.67616191904051"/>
+        </scene>
+        <!--DemoVC-->
+        <scene sceneID="WNM-LV-irl">
+            <objects>
+                <viewControllerPlaceholder storyboardName="InicioSB" referencedIdentifier="DemoVC" id="n4S-EW-Fxt" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xhH-9q-SBr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1143" y="979"/>
         </scene>
     </scenes>
     <resources>
