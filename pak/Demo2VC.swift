@@ -11,6 +11,11 @@ class Demo2VC: UIViewController {
 
     @IBOutlet weak var lblDemo2: UILabel!
     
+    @IBAction func btnDemoLIsta(_ sender: Any) {
+        //performSegue(withIdentifier: "InicioToLista", sender: nil)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

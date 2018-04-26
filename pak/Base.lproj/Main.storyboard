@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="44S-Lk-tBS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="44S-Lk-tBS">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,7 +22,7 @@
                     </view>
                     <connections>
                         <segue destination="Scb-eG-BHQ" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="Crk-Ke-Fpd"/>
-                        <segue destination="TWk-IR-k0E" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="0jU-hT-2sN"/>
+                        <segue destination="n4S-EW-Fxt" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="iDe-4U-RGV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zt5-uo-LQF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -114,7 +114,7 @@
                                                     </subviews>
                                                 </tableViewCellContentView>
                                                 <connections>
-                                                    <segue destination="TWk-IR-k0E" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="g6f-gs-sbi"/>
+                                                    <segue destination="n4S-EW-Fxt" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="F5G-Gl-UpW"/>
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="m_02" id="wc2-Y4-oUE">
@@ -353,9 +353,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WnB-8Z-ZDY">
                                 <rect key="frame" x="125" y="399" width="124" height="30"/>
                                 <state key="normal" title="Demo VIsual AMD"/>
-                                <connections>
-                                    <segue destination="n4S-EW-Fxt" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="uvF-ZU-lNa"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -390,7 +387,7 @@
                 <viewControllerPlaceholder storyboardName="InicioSB" referencedIdentifier="DemoVC" id="n4S-EW-Fxt" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xhH-9q-SBr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1143" y="979"/>
+            <point key="canvasLocation" x="10" y="628"/>
         </scene>
     </scenes>
     <resources>
@@ -400,6 +397,6 @@
         <image name="user_demo" width="66" height="66"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="g6f-gs-sbi"/>
+        <segue reference="F5G-Gl-UpW"/>
     </inferredMetricsTieBreakers>
 </document>

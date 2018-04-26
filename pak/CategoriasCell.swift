@@ -9,4 +9,5 @@ import UIKit
 
 class CategoriasCell: UICollectionViewCell {
     
+    @IBOutlet weak var lblCategoria: UILabel!
 }

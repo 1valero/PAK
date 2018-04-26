@@ -13,6 +13,7 @@ class InicioVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        performSegue(withIdentifier: "InicioToLista", sender: nil)
         // Do any additional setup after loading the view, typically from a nib.
         /*btnNavDrawer.target = self.revealViewController()
         btnNavDrawer.action = #selector(SWRevealViewController.revealToggle(_:))*/

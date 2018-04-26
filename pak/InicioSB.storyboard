@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -130,11 +131,109 @@
                         <outlet property="btnAnuncios" destination="Xn9-Jl-4vH" id="TYu-5l-FtH"/>
                         <outlet property="btnCatalogo" destination="dCR-LF-yzv" id="H86-px-o30"/>
                         <outlet property="svMain" destination="cwM-cZ-ghA" id="vEO-PQ-b8R"/>
+                        <segue destination="IIA-cp-P2E" kind="show" identifier="InicioToLista" id="ydF-l6-CoE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sdd-Mb-9xK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="724" y="93.103448275862078"/>
+        </scene>
+        <!--Lista ProductosVC-->
+        <scene sceneID="XML-Ie-0vN">
+            <objects>
+                <viewController id="5wp-06-1Po" customClass="ListaProductosVC" customModule="pak" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kL9-Jj-nfE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pf7-bE-IjZ">
+                                <rect key="frame" x="0.0" y="20" width="56" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="56" id="Ufd-vQ-2fS"/>
+                                    <constraint firstAttribute="height" constant="56" id="bPc-bg-puU"/>
+                                </constraints>
+                                <state key="normal" title="="/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLB-Nm-a5v">
+                                <rect key="frame" x="319" y="20" width="56" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="56" id="VCo-D1-vgu"/>
+                                    <constraint firstAttribute="height" constant="56" id="nuS-2F-qtv"/>
+                                </constraints>
+                                <state key="normal" title="[69]"/>
+                            </button>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Buscar producto" translatesAutoresizingMaskIntoConstraints="NO" id="GZN-3q-mZC">
+                                <rect key="frame" x="56" y="20" width="263" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                            </searchBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CkM-mY-xDl">
+                                <rect key="frame" x="0.0" y="76" width="375" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="9xg-tb-dx9"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dvp-yR-nhD">
+                                    <size key="itemSize" width="139" height="42"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell_categoria" id="jnN-AJ-Nbq" customClass="CategoriasCell" customModule="pak" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="1" width="139" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="139" height="42"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Longest Word" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHf-ZZ-I3b">
+                                                    <rect key="frame" x="16" y="12" width="107" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="IHf-ZZ-I3b" firstAttribute="leading" secondItem="jnN-AJ-Nbq" secondAttribute="leadingMargin" constant="8" id="5sC-fc-8QN"/>
+                                            <constraint firstItem="IHf-ZZ-I3b" firstAttribute="centerY" secondItem="jnN-AJ-Nbq" secondAttribute="centerY" id="Mjr-8H-D7T"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="IHf-ZZ-I3b" secondAttribute="trailing" constant="8" id="qIU-C5-g83"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="lblCategoria" destination="IHf-ZZ-I3b" id="nLO-bk-mxF"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="5wp-06-1Po" id="p1f-jG-ZOO"/>
+                                    <outlet property="delegate" destination="5wp-06-1Po" id="TC4-f3-Ylh"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="GZN-3q-mZC" firstAttribute="leading" secondItem="pf7-bE-IjZ" secondAttribute="trailing" id="82P-Wx-91n"/>
+                            <constraint firstItem="pf7-bE-IjZ" firstAttribute="top" secondItem="C1q-gc-prU" secondAttribute="top" id="BxJ-L8-82l"/>
+                            <constraint firstItem="pf7-bE-IjZ" firstAttribute="leading" secondItem="C1q-gc-prU" secondAttribute="leading" id="H25-84-oj9"/>
+                            <constraint firstItem="bLB-Nm-a5v" firstAttribute="leading" secondItem="GZN-3q-mZC" secondAttribute="trailing" id="QoU-91-kpl"/>
+                            <constraint firstItem="bLB-Nm-a5v" firstAttribute="top" secondItem="C1q-gc-prU" secondAttribute="top" id="c2B-9p-CbX"/>
+                            <constraint firstItem="CkM-mY-xDl" firstAttribute="top" secondItem="pf7-bE-IjZ" secondAttribute="bottom" id="eJl-1D-WNv"/>
+                            <constraint firstItem="CkM-mY-xDl" firstAttribute="leading" secondItem="C1q-gc-prU" secondAttribute="leading" id="gKF-sr-0xb"/>
+                            <constraint firstItem="GZN-3q-mZC" firstAttribute="top" secondItem="C1q-gc-prU" secondAttribute="top" id="hAq-Th-3Pr"/>
+                            <constraint firstItem="bLB-Nm-a5v" firstAttribute="trailing" secondItem="C1q-gc-prU" secondAttribute="trailing" id="px0-LH-TTn"/>
+                            <constraint firstItem="C1q-gc-prU" firstAttribute="trailing" secondItem="CkM-mY-xDl" secondAttribute="trailing" id="vei-CU-PVn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="C1q-gc-prU"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="DCB-C4-kEo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AIf-k8-Chr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3068" y="93.103448275862078"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SiX-n5-3E0">
@@ -153,6 +252,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pTb-8t-yF3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-148" y="93"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tYk-6U-7qm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="IIA-cp-P2E" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="G2b-md-azj">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5wp-06-1Po" kind="relationship" relationship="rootViewController" id="VGM-vo-anx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HMv-i9-vul" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2128.8000000000002" y="92.203898050974516"/>
         </scene>
     </scenes>
     <resources>

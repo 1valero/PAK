@@ -40,6 +40,9 @@ class InicioDemoVC: UIViewController, UIScrollViewDelegate {
         v2.lblDemo2.text = "Este texto del Demo2VC tambien se cambio desde el Padre VC"
  
         self.svMain.contentSize = CGSize(width: self.view.frame.width * 2, height: self.view.frame.size.height - 112)
+        
+        
+        performSegue(withIdentifier: "InicioToLista", sender: nil)
     }
 
     override func didReceiveMemoryWarning() {
